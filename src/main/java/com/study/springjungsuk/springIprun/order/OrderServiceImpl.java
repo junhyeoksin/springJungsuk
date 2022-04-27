@@ -2,15 +2,18 @@ package com.study.springjungsuk.springIprun.order;
 
 
 import com.study.springjungsuk.springIprun.discount.DiscountPolicy;
-import com.study.springjungsuk.springIprun.discount.FixDiscountPolicy;
 import com.study.springjungsuk.springIprun.member.Member;
 import com.study.springjungsuk.springIprun.member.MemberRepository;
-import com.study.springjungsuk.springIprun.member.MemoryMeberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMeberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     /**
      * 주문생성 !
