@@ -2,6 +2,7 @@ package com.study.springjungsuk.springIprun.order;
 
 
 import com.study.springjungsuk.springIprun.discount.DiscountPolicy;
+import com.study.springjungsuk.springIprun.discount.FixDiscountPolicy;
 import com.study.springjungsuk.springIprun.member.Member;
 import com.study.springjungsuk.springIprun.member.MemberRepository;
 
