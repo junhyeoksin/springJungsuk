@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class SampleDto {
-    private int idx;
-    private String name;
-    private String gender;
+    private int idx = 1;
+    private String name = "JJ";
+    private String gender = "1";
 }
