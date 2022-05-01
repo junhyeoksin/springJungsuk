@@ -3,8 +3,9 @@ package com.study.springjungsuk.springIprun.stream;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class Stream {
+public class StreamList {
     public static void main(String[] args) {
         impossibleNewStream();
         java8Code();
@@ -15,8 +16,9 @@ public class Stream {
     static void java8Code() {
         List<SampleDto> sampleDtoList = new ArrayList<>();
 
-/** 람다를 인수로 받아, 스트림에서 특정 요소를 제외시킨다. 아래는 idx가 10 이상인 데이터를 선택한다. */
-
+/**
+ *   람다를 인수로 받아, 스트림에서 특정 요소를 제외시킨다. 아래는 idx가 10 이상인 데이터를 선택한다.
+ * */
 
         List<String> list = sampleDtoList.stream()
                 .filter(d -> d.getIdx() < 10)           //10 이상인 데이터 선택
@@ -86,5 +88,23 @@ public class Stream {
      */
 
 
+    /**
+     * 스트림의 연산
+     */
+    static void streamkind(){
+    String[] strArr = {"dd" ,  "aaa", "ccc", "ff" };
+    List<String> list1 =  new ArrayList<>();
+        list1.add("list1");
+        list1.add("list2");
+        list1.add("list3");
+        list1.add("list4");
+        list1.add("list5");
+        Stream<String> stream = Stream.of(strArr);       //문자열 배열! 이 소스인 스트림
 
+//        Stream<String> filteredStream = stream.filter();     // 걸러내기 ( 중간 연산)
+//        Stream<String> distinctedStream = stream.distinct(); // 중복제거 ( 중간연산)
+//        Stream<String> sortedStream = stream.sorted();      //정렬 ( 중간연산)
+//        Stream<String> limitedStream = stream.limit(5); //스트림 자르기 (중간연산)
+
+    }
 }
