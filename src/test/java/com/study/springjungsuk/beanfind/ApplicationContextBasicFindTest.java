@@ -6,9 +6,11 @@ import com.study.springjungsuk.springIprun.order.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationContextBasicFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -34,5 +36,12 @@ public class ApplicationContextBasicFindTest {
         MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);  //memberService가 memberServiceImpl 인스턴스이면 성공
 
+    }
+
+    @Test
+    @DisplayName("빈 이름으로 조회")
+    void findBeanByNameX(){
+        assertThrows(NoSuchBeanDefinitionException.class,
+                ()-> ac.getBean("xxxx", MemberService.class));
     }
 }
