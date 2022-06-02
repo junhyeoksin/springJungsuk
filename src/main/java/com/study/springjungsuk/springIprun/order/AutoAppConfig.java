@@ -8,8 +8,9 @@ import java.lang.reflect.Type;
 
 @Configuration
 @ComponentScan(
-    excludeFilters = @ComponentScan.Filter(Type = FilterType.ANNOTATION, classes = Configuration.class)
+        basePackages = "com.study.springjungsuk.springIprun.member",
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
 public class AutoAppConfig {
 
-    }
+}
